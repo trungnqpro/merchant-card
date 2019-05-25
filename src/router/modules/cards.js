@@ -3,15 +3,21 @@
 import Layout from '@/layout'
 
 const chartsRouter = {
-  path: '/systems',
+  path: '/cards',
   component: Layout,
   redirect: 'noRedirect',
-  name: 'Systems',
+  name: 'Cards',
   meta: {
-    title: 'System',
+    title: 'Cards',
     icon: 'chart'
   },
   children: [
+    {
+      path: 'list',
+      component: () => import('@/views/excel/export-excel'),
+      name: 'List cards',
+      meta: { title: 'List cards' }
+    },
     {
       path: 'imports',
       component: () => import('@/views/excel/upload-excel'),
@@ -19,13 +25,7 @@ const chartsRouter = {
       meta: { title: 'Import Cards' }
     },
     {
-      path: 'revenues-export',
-      component: () => import('@/views/excel/export-excel'),
-      name: 'Export Revenues',
-      meta: { title: 'Export Revenues' }
-    },
-    {
-      path: 'revenues-overview',
+      path: 'revenues-chart',
       component: () => import('@/views/charts/mix-chart'),
       name: 'Revenues Chart',
       meta: { title: 'Revenues', noCache: true }

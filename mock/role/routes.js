@@ -44,31 +44,6 @@ export const constantRoutes = [
         meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
       }
     ]
-  },
-  {
-    path: '/documentation',
-    component: 'layout/Layout',
-    children: [
-      {
-        path: 'index',
-        component: 'views/documentation/index',
-        name: 'Documentation',
-        meta: { title: 'Documentation', icon: 'documentation', affix: true }
-      }
-    ]
-  },
-  {
-    path: '/guide',
-    component: 'layout/Layout',
-    redirect: '/guide/index',
-    children: [
-      {
-        path: 'index',
-        component: 'views/guide/index',
-        name: 'Guide',
-        meta: { title: 'Guide', icon: 'guide', noCache: true }
-      }
-    ]
   }
 ]
 
@@ -112,252 +87,155 @@ export const asyncRoutes = [
       }
     ]
   },
-
   {
-    path: '/icon',
-    component: 'layout/Layout',
-    children: [
-      {
-        path: 'index',
-        component: 'views/icons/index',
-        name: 'Icons',
-        meta: { title: 'Icons', icon: 'icon', noCache: true }
-      }
-    ]
-  },
-
-  {
-    path: '/components',
+    path: '/cards',
     component: 'layout/Layout',
     redirect: 'noRedirect',
-    name: 'ComponentDemo',
+    name: 'Cards',
     meta: {
-      title: 'Components',
-      icon: 'component'
+      title: 'Cards',
+      icon: 'chart',
+      roles: ['admin']
     },
     children: [
       {
-        path: 'tinymce',
-        component: 'views/components-demo/tinymce',
-        name: 'TinymceDemo',
-        meta: { title: 'Tinymce' }
+        path: 'list',
+        component: 'views/excel/export-excel',
+        name: 'List cards',
+        meta: { title: 'List cards' }
       },
       {
-        path: 'markdown',
-        component: 'views/components-demo/markdown',
-        name: 'MarkdownDemo',
-        meta: { title: 'Markdown' }
+        path: 'imports',
+        component: 'views/excel/upload-excel',
+        name: 'Import Cards',
+        meta: { title: 'Import Cards' }
       },
       {
-        path: 'json-editor',
-        component: 'views/components-demo/json-editor',
-        name: 'JsonEditorDemo',
-        meta: { title: 'Json Editor' }
-      },
-      {
-        path: 'split-pane',
-        component: 'views/components-demo/split-pane',
-        name: 'SplitpaneDemo',
-        meta: { title: 'SplitPane' }
-      },
-      {
-        path: 'avatar-upload',
-        component: 'views/components-demo/avatar-upload',
-        name: 'AvatarUploadDemo',
-        meta: { title: 'Avatar Upload' }
-      },
-      {
-        path: 'dropzone',
-        component: 'views/components-demo/dropzone',
-        name: 'DropzoneDemo',
-        meta: { title: 'Dropzone' }
-      },
-      {
-        path: 'sticky',
-        component: 'views/components-demo/sticky',
-        name: 'StickyDemo',
-        meta: { title: 'Sticky' }
-      },
-      {
-        path: 'count-to',
-        component: 'views/components-demo/count-to',
-        name: 'CountToDemo',
-        meta: { title: 'Count To' }
-      },
-      {
-        path: 'mixin',
-        component: 'views/components-demo/mixin',
-        name: 'ComponentMixinDemo',
-        meta: { title: 'componentMixin' }
-      },
-      {
-        path: 'back-to-top',
-        component: 'views/components-demo/back-to-top',
-        name: 'BackToTopDemo',
-        meta: { title: 'Back To Top' }
-      },
-      {
-        path: 'drag-dialog',
-        component: 'views/components-demo/drag-dialog',
-        name: 'DragDialogDemo',
-        meta: { title: 'Drag Dialog' }
-      },
-      {
-        path: 'drag-select',
-        component: 'views/components-demo/drag-select',
-        name: 'DragSelectDemo',
-        meta: { title: 'Drag Select' }
-      },
-      {
-        path: 'dnd-list',
-        component: 'views/components-demo/dnd-list',
-        name: 'DndListDemo',
-        meta: { title: 'Dnd List' }
-      },
-      {
-        path: 'drag-kanban',
-        component: 'views/components-demo/drag-kanban',
-        name: 'DragKanbanDemo',
-        meta: { title: 'Drag Kanban' }
+        path: 'revenues-chart',
+        component: 'views/charts/mix-chart',
+        name: 'Revenues Chart',
+        meta: { title: 'Revenues', noCache: true }
       }
     ]
   },
   {
-    path: '/charts',
+    path: '/logs',
     component: 'layout/Layout',
     redirect: 'noRedirect',
-    name: 'Charts',
+    name: 'Logs',
     meta: {
-      title: 'Charts',
+      title: 'Logs',
+      icon: 'chart',
+      roles: ['admin']
+    },
+    children: [
+      {
+        path: 'list',
+        component: 'views/example/list',
+        name: 'Logs',
+        meta: { title: 'Logs' }
+      }
+    ]
+  },
+  {
+    path: '/merchants',
+    component: 'layout/Layout',
+    redirect: 'noRedirect',
+    name: 'Merchants',
+    meta: {
+      title: 'Merchants',
       icon: 'chart'
     },
     children: [
       {
-        path: 'keyboard',
-        component: 'views/charts/keyboard',
-        name: 'KeyboardChart',
-        meta: { title: 'Keyboard Chart', noCache: true }
+        path: 'list',
+        component: 'views/example/list',
+        name: 'Merchant List',
+        meta: { title: 'Merchant List' }
       },
-      {
-        path: 'line',
-        component: 'views/charts/line',
-        name: 'LineChart',
-        meta: { title: 'Line Chart', noCache: true }
-      },
-      {
-        path: 'mixchart',
-        component: 'views/charts/mixChart',
-        name: 'MixChart',
-        meta: { title: 'Mix Chart', noCache: true }
-      }
-    ]
-  },
-  {
-    path: '/nested',
-    component: 'layout/Layout',
-    redirect: '/nested/menu1/menu1-1',
-    name: 'Nested',
-    meta: {
-      title: 'Nested',
-      icon: 'nested'
-    },
-    children: [
-      {
-        path: 'menu1',
-        component: 'views/nested/menu1/index',
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        redirect: '/nested/menu1/menu1-1',
-        children: [
-          {
-            path: 'menu1-1',
-            component: 'views/nested/menu1/menu1-1',
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: 'views/nested/menu1/menu1-2',
-            name: 'Menu1-2',
-            redirect: '/nested/menu1/menu1-2/menu1-2-1',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: 'views/nested/menu1/menu1-2/menu1-2-1',
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: 'views/nested/menu1/menu1-2/menu1-2-2',
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: 'views/nested/menu1/menu1-3',
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
-      },
-      {
-        path: 'menu2',
-        name: 'Menu2',
-        component: 'views/nested/menu2/index',
-        meta: { title: 'Menu2' }
-      }
-    ]
-  },
-
-  {
-    path: '/example',
-    component: 'layout/Layout',
-    redirect: '/example/list',
-    name: 'Example',
-    meta: {
-      title: 'Example',
-      icon: 'example'
-    },
-    children: [
       {
         path: 'create',
         component: 'views/example/create',
-        name: 'CreateArticle',
-        meta: { title: 'Create Article', icon: 'edit' }
+        name: 'Create Merchant',
+        meta: { title: 'Create Merchant' }
       },
       {
         path: 'edit/:id(\\d+)',
         component: 'views/example/edit',
-        name: 'EditArticle',
-        meta: { title: 'Edit Article', noCache: true },
+        name: 'Edit Merchant',
+        meta: { title: 'Edit User', noCache: true, activeMenu: '/example/list' },
         hidden: true
       },
       {
-        path: 'list',
-        component: 'views/example/list',
-        name: 'ArticleList',
-        meta: { title: 'Article List', icon: 'list' }
+        path: '/profile',
+        component: 'layout/Layout',
+        redirect: '/profile/index',
+        hidden: true,
+        children: [
+          {
+            path: 'index',
+            component: 'views/profile/index',
+            name: 'Profile',
+            meta: { title: 'Profile', icon: 'user', noCache: true }
+          }
+        ]
+      },
+      {
+        path: 'revenues',
+        component: 'views/charts/mix-chart',
+        name: 'Revenues',
+        meta: { title: 'My Revenues', noCache: true }
       }
     ]
   },
-
   {
-    path: '/tab',
+    path: '/orders',
     component: 'layout/Layout',
+    redirect: 'noRedirect',
+    name: 'Orders',
+    meta: {
+      title: 'Orders',
+      icon: 'chart'
+    },
     children: [
       {
-        path: 'index',
-        component: 'views/tab/index',
-        name: 'Tab',
-        meta: { title: 'Tab', icon: 'tab' }
+        path: 'list',
+        component: 'views/example/list',
+        name: 'Order List',
+        meta: { title: 'Order List' }
+      },
+      {
+        path: 'transactions',
+        component: 'views/example/list',
+        name: 'Transaction List',
+        meta: { title: 'Transaction List' }
       }
     ]
   },
-
+  {
+    path: '/pos',
+    component: 'layout/Layout',
+    redirect: 'noRedirect',
+    name: 'Pos',
+    meta: {
+      title: 'Pos Card',
+      icon: 'chart'
+    },
+    children: [
+      {
+        path: 'list',
+        component: 'views/example/list',
+        name: 'Pos',
+        meta: { title: 'Pos List' }
+      },
+      {
+        path: 'pos-chart',
+        component: 'views/charts/mix-chart',
+        name: 'Pos chart',
+        meta: { title: 'Pos Chart', noCache: true }
+      }
+    ]
+  },
   {
     path: '/error',
     component: 'layout/Layout',
@@ -396,130 +274,5 @@ export const asyncRoutes = [
       }
     ]
   },
-
-  {
-    path: '/excel',
-    component: 'layout/Layout',
-    redirect: '/excel/export-excel',
-    name: 'Excel',
-    meta: {
-      title: 'Excel',
-      icon: 'excel'
-    },
-    children: [
-      {
-        path: 'export-excel',
-        component: 'views/excel/export-excel',
-        name: 'ExportExcel',
-        meta: { title: 'Export Excel' }
-      },
-      {
-        path: 'export-selected-excel',
-        component: 'views/excel/select-excel',
-        name: 'SelectExcel',
-        meta: { title: 'Select Excel' }
-      },
-      {
-        path: 'export-merge-header',
-        component: 'views/excel/merge-header',
-        name: 'MergeHeader',
-        meta: { title: 'Merge Header' }
-      },
-      {
-        path: 'upload-excel',
-        component: 'views/excel/upload-excel',
-        name: 'UploadExcel',
-        meta: { title: 'Upload Excel' }
-      }
-    ]
-  },
-
-  {
-    path: '/zip',
-    component: 'layout/Layout',
-    redirect: '/zip/download',
-    alwaysShow: true,
-    meta: { title: 'Zip', icon: 'zip' },
-    children: [
-      {
-        path: 'download',
-        component: 'views/zip/index',
-        name: 'ExportZip',
-        meta: { title: 'Export Zip' }
-      }
-    ]
-  },
-
-  {
-    path: '/pdf',
-    component: 'layout/Layout',
-    redirect: '/pdf/index',
-    children: [
-      {
-        path: 'index',
-        component: 'views/pdf/index',
-        name: 'PDF',
-        meta: { title: 'PDF', icon: 'pdf' }
-      }
-    ]
-  },
-  {
-    path: '/pdf/download',
-    component: 'views/pdf/download',
-    hidden: true
-  },
-
-  {
-    path: '/theme',
-    component: 'layout/Layout',
-    redirect: 'noRedirect',
-    children: [
-      {
-        path: 'index',
-        component: 'views/theme/index',
-        name: 'Theme',
-        meta: { title: 'Theme', icon: 'theme' }
-      }
-    ]
-  },
-
-  {
-    path: '/clipboard',
-    component: 'layout/Layout',
-    redirect: 'noRedirect',
-    children: [
-      {
-        path: 'index',
-        component: 'views/clipboard/index',
-        name: 'ClipboardDemo',
-        meta: { title: 'Clipboard Demo', icon: 'clipboard' }
-      }
-    ]
-  },
-
-  {
-    path: '/i18n',
-    component: 'layout/Layout',
-    children: [
-      {
-        path: 'index',
-        component: 'views/i18n-demo/index',
-        name: 'I18n',
-        meta: { title: 'I18n', icon: 'international' }
-      }
-    ]
-  },
-
-  {
-    path: 'external-link',
-    component: 'layout/Layout',
-    children: [
-      {
-        path: 'https://github.com/PanJiaChen/vue-element-admin',
-        meta: { title: 'External Link', icon: 'link' }
-      }
-    ]
-  },
-
   { path: '*', redirect: '/404', hidden: true }
 ]

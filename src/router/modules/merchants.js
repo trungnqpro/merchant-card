@@ -15,8 +15,35 @@ const chartsRouter = {
     {
       path: 'list',
       component: () => import('@/views/example/list'),
-      name: 'Orders',
-      meta: { title: 'Order List' }
+      name: 'Merchant List',
+      meta: { title: 'Merchant List' }
+    },
+    {
+      path: 'create',
+      component: () => import('@/views/example/create'),
+      name: 'Create Merchant',
+      meta: { title: 'Create Merchant' }
+    },
+    {
+      path: 'edit/:id(\\d+)',
+      component: () => import('@/views/example/edit'),
+      name: 'Edit Merchant',
+      meta: { title: 'Edit User', noCache: true, activeMenu: '/example/list' },
+      hidden: true
+    },
+    {
+      path: '/profile',
+      component: Layout,
+      redirect: '/profile/index',
+      hidden: true,
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/views/profile/index'),
+          name: 'Profile',
+          meta: { title: 'Profile', icon: 'user', noCache: true }
+        }
+      ]
     },
     {
       path: 'revenues',

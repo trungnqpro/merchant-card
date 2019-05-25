@@ -13,6 +13,25 @@ const usersRouter = {
   },
   children: [
     {
+      path: 'list',
+      component: () => import('@/views/example/list'),
+      name: 'User List',
+      meta: { title: 'User List', icon: 'list' }
+    },
+    {
+      path: 'create',
+      component: () => import('@/views/example/create'),
+      name: 'Create User',
+      meta: { title: 'Create User', icon: 'edit' }
+    },
+    {
+      path: 'edit/:id(\\d+)',
+      component: () => import('@/views/example/edit'),
+      name: 'Edit Users',
+      meta: { title: 'Edit User', noCache: true, activeMenu: '/example/list' },
+      hidden: true
+    },
+    {
       path: '/profile',
       component: Layout,
       redirect: '/profile/index',
@@ -25,25 +44,6 @@ const usersRouter = {
           meta: { title: 'Profile', icon: 'user', noCache: true }
         }
       ]
-    },
-    {
-      path: 'create',
-      component: () => import('@/views/example/create'),
-      name: 'CreateArticle',
-      meta: { title: 'Create Article', icon: 'edit' }
-    },
-    {
-      path: 'edit/:id(\\d+)',
-      component: () => import('@/views/example/edit'),
-      name: 'EditArticle',
-      meta: { title: 'Edit Article', noCache: true, activeMenu: '/example/list' },
-      hidden: true
-    },
-    {
-      path: 'list',
-      component: () => import('@/views/example/list'),
-      name: 'ArticleList',
-      meta: { title: 'Article List', icon: 'list' }
     }
   ]
 }

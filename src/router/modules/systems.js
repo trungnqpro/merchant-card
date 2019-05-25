@@ -13,16 +13,22 @@ const chartsRouter = {
   },
   children: [
     {
-      path: 'export-excel',
-      component: () => import('@/views/excel/export-excel'),
-      name: 'ExportExcel',
-      meta: { title: 'Export Excel' }
+      path: 'imports',
+      component: () => import('@/views/excel/upload-excel'),
+      name: 'Import Cards',
+      meta: { title: 'Import Cards' }
     },
     {
-      path: 'upload-excel',
-      component: () => import('@/views/excel/upload-excel'),
-      name: 'UploadExcel',
-      meta: { title: 'Upload Excel' }
+      path: 'revenues-export',
+      component: () => import('@/views/excel/export-excel'),
+      name: 'Export Revenues',
+      meta: { title: 'Export Revenues' }
+    },
+    {
+      path: 'revenues-overview',
+      component: () => import('@/views/charts/mix-chart'),
+      name: 'Revenues Chart',
+      meta: { title: 'Revenues', noCache: true }
     }
   ]
 }

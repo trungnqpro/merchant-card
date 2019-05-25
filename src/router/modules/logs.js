@@ -3,12 +3,12 @@
 import Layout from '@/layout'
 
 const chartsRouter = {
-  path: '/charts',
+  path: '/logs',
   component: Layout,
   redirect: 'noRedirect',
-  name: 'Charts',
+  name: 'Logs',
   meta: {
-    title: 'Charts',
+    title: 'Logs',
     icon: 'chart'
   },
   children: [

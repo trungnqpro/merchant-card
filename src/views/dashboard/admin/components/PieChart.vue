@@ -52,7 +52,7 @@ export default {
         legend: {
           left: 'center',
           bottom: '10',
-          data: ['Industries', 'Technology', 'Forex', 'Gold', 'Forecasts']
+          data: ['Merchant 1', 'Merchant 2', 'Merchant 3', 'Merchant 4', 'Merchant 5']
         },
         series: [
           {
@@ -62,11 +62,11 @@ export default {
             radius: [15, 95],
             center: ['50%', '38%'],
             data: [
-              { value: 320, name: 'Industries' },
-              { value: 240, name: 'Technology' },
-              { value: 149, name: 'Forex' },
-              { value: 100, name: 'Gold' },
-              { value: 59, name: 'Forecasts' }
+              { value: 320, name: 'Merchant 1' },
+              { value: 240, name: 'Merchant 2' },
+              { value: 149, name: 'Merchant 3' },
+              { value: 100, name: 'Merchant 4' },
+              { value: 59, name: 'Merchant 5' }
             ],
             animationEasing: 'cubicInOut',
             animationDuration: 2600
